@@ -71,3 +71,8 @@
   border-radius: 50%;
 
 }
+.card-image{
+  min-height: 300px;
+  width: 250px;
+  margin: auto;
+}

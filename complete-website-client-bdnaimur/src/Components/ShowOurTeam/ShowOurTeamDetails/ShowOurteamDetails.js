@@ -4,7 +4,7 @@ const ShowOurteamDetails = ({team}) => {
     return (
         <div className="col-md-3">
             <div class="card">
-                <img style={{maxHeight:"180px"}} class="card-img-top" src={team.imageURL} alt="Card image cap" />
+                <img class="card-image card-img-top" src={team.imageURL} alt="Card image cap" />
                 <div class="card-body">
                     <h5 class="card-title">{team.name}</h5>
                     <div className="d-flex">
