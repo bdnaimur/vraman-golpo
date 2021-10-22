@@ -1,0 +1,17 @@
+.nav-link{
+    font-size: 20px;
+    margin-left: 20px;
+}
+.background-color{
+    /* background:; */
+}
+.nav-link:hover{
+    background-color: blanchedalmond;
+    color: #E0A800;
+    transition: 1.3s;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+.navItems{
+    margin-left: 300px;
+}
