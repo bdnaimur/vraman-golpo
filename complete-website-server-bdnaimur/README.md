@@ -1,4 +1,4 @@
-heroku http://localhost:5055/
+heroku https://whispering-lowlands-13005.herokuapp.com/
 
 WEBSITE NAME: (Vraman Bilash) Travelling Related Webiste
 
