@@ -24,7 +24,7 @@ const AddPackages = () => {
             price: data.price
         };
         console.log(eventData);
-        const url = `http://localhost:5055/addServices`;
+        const url = `https://whispering-lowlands-13005.herokuapp.com/addServices`;
 
         fetch(url, {
             method: 'POST',

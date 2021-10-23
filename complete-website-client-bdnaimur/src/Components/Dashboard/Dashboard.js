@@ -23,7 +23,7 @@ const Dashboard = () => {
   });
 console.log(loggedInUser);
   useEffect(()=>{
-    const url = `http://localhost:5055/reviews`;
+    const url = `https://whispering-lowlands-13005.herokuapp.com/reviews`;
     fetch(url)
     .then(res =>res.json())
     .then(data =>{
@@ -41,7 +41,7 @@ console.log(loggedInUser);
       displayName: loggedInUser.displayName
     };
     console.log(eventData);
-    const url = `http://localhost:5055/addReviews`;
+    const url = `https://whispering-lowlands-13005.herokuapp.com/addReviews`;
 
     fetch(url, {
       method: 'POST',
