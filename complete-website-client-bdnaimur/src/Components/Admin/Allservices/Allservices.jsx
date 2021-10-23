@@ -48,7 +48,7 @@ const Allservices = () => {
         console.log(editItems);
         const id = editItems._id;
         console.log("clicked", data, id);
-        fetch(`http://localhost:5055/update/${id}`, {
+        fetch(`https://salty-shore-75037.herokuapp.com/update/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
