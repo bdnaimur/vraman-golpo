@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { userContext } from '../../App';
-import './Header.css'
+import logo from '../../assets/logo/varaman galpo logo.png';
+import './Header.css';
 import Topbar from './Topbar';
-import logo from '../../assets/logo/varaman galpo logo.png'
 const Header = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [isAdmin, setIsAdmin] = useState({
@@ -15,12 +14,12 @@ const Header = () => {
         setLoggedInUser('');
     }
 
-    const cpName = {
-        fontWeight : "700",
-        color: "darkGreen",
-        marginTop: "20px",
-        textShadow: "2px 2px 5px lightGray"
-    }
+    // const cpName = {
+    //     fontWeight : "700",
+    //     color: "darkGreen",
+    //     marginTop: "20px",
+    //     textShadow: "2px 2px 5px lightGray"
+    // }
     console.log(loggedInUser);
     return (
         <>
@@ -30,7 +29,7 @@ const Header = () => {
                 <div class="container">
                     <Link class="navbar-brand" to="/home"> 
                     {/* <h1 style={cpName} className="cp-name">Vraman Bilash</h1> */}
-                        <img class="logo border" src={logo} alt="" />
+                        <img class="logo border" src={logo} alt="logo" height="50px" />
                     </Link>
                     <button class="navbar-toggler mt-4 border" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -55,7 +54,7 @@ const Header = () => {
                             {/* }  */}
                             <li class="nav-item">
                                 {/* <a class="nav-link" href="/deals">Deals</a> */}
-                                <Link class="nav-link " to="/deals">Packages</Link>
+                                <Link class="nav-link " to="/packages">Packages</Link>
                             </li>
                             {loggedInUser.emailVerified && <li class="nav-item nav-link " onClick={handleClick} >Sign Out</li>}
                             

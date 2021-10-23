@@ -72,7 +72,18 @@
 
 }
 .card-image{
-  min-height: 300px;
+  min-height: 200px;
   width: 250px;
   margin: auto;
+}
+.contact-form{
+  border: 1px solid rgb(228, 224, 224);
+  padding: 20px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 30px lightgray;
+}
+.review-style:hover{
+  /* background-color: tomato !important; */
+  /* font-size: 18px; */
+
 }

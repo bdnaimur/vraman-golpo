@@ -1,16 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import AllReview from '../AllReview/AllReview';
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
+import "swiper/components/navigation/navigation.min.css";
+import "swiper/components/pagination/pagination.min.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/swiper.min.css";
-import "swiper/components/pagination/pagination.min.css";
-import "swiper/components/navigation/navigation.min.css";
-
-//swiper slider
-import SwiperCore, {
-    Autoplay, Pagination
-} from 'swiper/core';
-import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 import { userContext } from '../../App';
+
 const ReviewHomePage = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [reviews, setReview] = useState([] || 1);
@@ -63,15 +58,15 @@ const ReviewHomePage = () => {
                     {
                         reviews.map(review =>
                             <SwiperSlide>
-                                <div className="group w-90 mt-10 mb-16 testimonial-card cursor-pointer bg-white dark:bg-gray-800 shadow-lg mx-auto rounded-xl p-4">
-                                        <div className="d-flex justify-content-between">
+                                <div className="review-style group mt-10 mb-16 testimonial-card cursor-pointer bg-white  shadow-lg mx-auto rounded-xl p-4">
+                                    <div className="d-flex justify-content-between">
                                         <div className="review-image">
                                             <img src={review.imageURL} className="" />
                                         </div>
-                                    <div className="mt-5">
-                                        {review.displayName}
-                                    </div>
+                                        <div className="mt-5">
+                                            {review.displayName}
                                         </div>
+                                    </div>
                                     <p className="text-gray-600 dark:text-white flex">
                                         <span className="leftQoute">
                                             <ImQuotesLeft />

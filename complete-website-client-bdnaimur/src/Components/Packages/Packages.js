@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import spinner from '../../../assets/spinner/spinner.gif';
-import BookingDetails from '../BookingDetails/BookingDetails';
+import spinner from '../../assets/spinner/spinner.gif';
+import BookingDetails from '../Home/BookingDetails/BookingDetails';
 
-
-const Bookings = () => {
+const Packages = () => {
     const [services, setServices] = useState([])
 
     console.log('services',services);
@@ -11,7 +10,7 @@ const Bookings = () => {
     const url = `http://localhost:5055/services`;
         fetch(url)
         .then(res =>res.json())
-        .then(data => setServices(data.slice(0,3)))
+        .then(data => setServices(data))
 
 },[])
 
@@ -27,4 +26,6 @@ const Bookings = () => {
     );
 };
 
-export default Bookings;
+
+
+export default Packages;

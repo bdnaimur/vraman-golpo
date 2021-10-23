@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './Home.css'
-import Pithas from '../Pithas/Pithas';
-import HomeBody from './HomeBody/HomeBody';
-import Bookings from './Bookings/Bookings';
-import Review from '../Review/Review';
-import ReviewHomePage from '../ReviewHomePage/ReviewHomePage';
-import ShowOurTeam from '../ShowOurTeam/ShowOurTeam'
-import ProcessPayment from '../ProcessPayment/ProcessPayment';
+import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
+import ReviewHomePage from '../ReviewHomePage/ReviewHomePage';
+import ShowOurTeam from '../ShowOurTeam/ShowOurTeam';
 import WhoWeAre from '../WhoWEAre/WhoWeAre';
-import ModalForEdit from '../ModalForEdit/ModalForEdit';
+import Bookings from './Bookings/Bookings';
+import './Home.css';
+import HomeBody from './HomeBody/HomeBody';
 const Home = () => {
     const [pitha, setPitha] = useState([]);
     
@@ -36,6 +33,7 @@ const Home = () => {
             <ReviewHomePage/>
             <ShowOurTeam/>
             <WhoWeAre/>
+            <Contact/>
             <Footer/>
         </div>
     );
