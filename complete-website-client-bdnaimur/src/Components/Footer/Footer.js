@@ -3,6 +3,7 @@ import './Footer.css';
 import FooterCol from '../FooterCol/FooterCol';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
+import ScrollTop from '../Home/ScrollTop/ScrollTop';
 
 const Footer = () => {
     const Various = [
@@ -54,6 +55,7 @@ const Footer = () => {
                     <p>Copyright {(new Date()).getFullYear()} All Rights Reserved</p>
                 </div>
             </div>
+            {/* <ScrollTop/> */}
         </footer>
         
     );

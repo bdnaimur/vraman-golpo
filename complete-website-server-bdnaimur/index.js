@@ -138,13 +138,13 @@ client.connect(err => {
   // })
   app.patch('/update/:id', (req, res) => {
     console.log(ObjectId(req.params.id));
-    console.log(req.body.name);
-    vramankariCollection.updateOne({ _id: ObjectId(req.params.id) },
+    // console.log(req.body);
+    serviceCollection.updateOne({ _id: ObjectId(req.params.id) },
       {
-        $set: { name: req.body.name, price: req.body.price }
+        $set: { name: req.body.name, price: req.body.price, details: req.body.details, day: req.body.day, night: req.body.night }
       })
       .then(result => {
-        console.log(result);
+        // console.log(result);
         res.send(result.modifiedCount > 0)
       })
   })

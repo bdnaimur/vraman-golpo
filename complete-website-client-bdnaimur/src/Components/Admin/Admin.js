@@ -70,21 +70,7 @@ const Admin = () => {
 
   }
 
-  const deleteItem = (event, id) => {
-    console.log(event.currentTarget);
-    console.log(id);
-    fetch(`https://salty-shore-75037.herokuapp.com/delete/${id}`, {
-        method: 'DELETE',
-    })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if (data) {
-                const remainItem = user.filter( item => item._id !== id);
-                setUser(remainItem);
-            }
-        })
-}
+  
   const handleAddClick = e => {
     const addclicked = { ...clicked };
     addclicked.add = true;
@@ -109,8 +95,8 @@ const Admin = () => {
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-md-4 manage-product">
-            <span onClick={handleManageClick}><span className="icon-style"><FontAwesomeIcon icon={faTasks} /></span><span>Manage Product</span></span><br />
+          <div className="col-md-3 manage-product">
+            <Link to='/allservices'><FontAwesomeIcon icon={faTasks} /><span>Manage Product</span></Link> <br />
             <span className="icon-style"><FontAwesomeIcon icon={faPlusSquare} /></span><Link to="/addPackages"><span>Add Product</span></Link><br />
             <span className="last-menu" onClick={handleOurTeamClick}><span className="icon-style"><FontAwesomeIcon icon={faEdit} /></span><span>Our Team</span></span><br/>
             <span className="last-menu"><span ><FontAwesomeIcon icon={faFirstOrder} /></span><span><Link to="/showAllOrders" className="icon-style">All Orders</Link></span></span>
@@ -126,11 +112,7 @@ const Admin = () => {
             </div>}
             <h6 style={{ backgroundColor: "lightCyan", textAlign: "center", padding: "5px 0px" }}>Please Select Add if you want to add product</h6>
             {clicked.manage ? <div>
-              <table class="table table-hover shadow">
-                <tbody>
-                  {user.map(pitha => <AllData deleteItem={deleteItem} pitha={pitha}></AllData>)}
-                </tbody>
-              </table>
+              
             </div> : <h6 style={{ backgroundColor: "lightCyan", textAlign: "center", padding: "5px 0px" }}>Please Select Manage if you want to Edit or Delete</h6>}
 
             {clicked.ourTeam ?

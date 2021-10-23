@@ -21,7 +21,11 @@ const AddPackages = () => {
             name: data.name,
             details: data.details,
             imageURL: imageURL,
-            price: data.price
+            price: data.price,
+            day: data.day,
+            night: data.night,
+            breakfast: data.breakfast,
+            meal: data.meal,
         };
         console.log(eventData);
         const url = `https://salty-shore-75037.herokuapp.com/addServices`;
@@ -34,7 +38,7 @@ const AddPackages = () => {
             body: JSON.stringify(eventData)
         })
             .then(res => {
-                if(res){
+                if (res) {
                     history.push('/packages')
                 }
                 console.log('server side response', res)
@@ -74,7 +78,29 @@ const AddPackages = () => {
                             </div>
                             <div class="form-group">
                                 <label for="PackageDetails">Package Details</label>
-                                <input type="text" name="details" class="form-control" id="PackageDetails" placeholder="Add Details" ref={register} />
+                                <textarea type="text" name="details" class="form-control" id="PackageDetails" placeholder="Write Details" ref={register} />
+                            </div>
+                            <div className="row">
+                                <div class="form-group col-md-6">
+                                    <label for="day">Number of Days</label>
+                                    <input type="text" name="day" class="form-control" id="day" placeholder="Write Number of Days" ref={register} />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="night">Number of Nights</label>
+                                    <input type="text" name="night" class="form-control" id="night" placeholder="Write Number of Nights" ref={register} />
+                                </div>
+                            </div>
+                            <div className="row mt-1">
+                                <div class="form-check col-md-3">
+                                    
+                                    <input type="checkbox" class="form-check-label" name="breakfast" id="breakfast" placeholder="Number of Night" ref={register} />
+                                    <label for="breakfast" class="form-check-label">Breakfast</label>
+                                </div>
+                                <div class="form-check col-md-3">
+                                    
+                                    <input type="checkbox" name="meal" class="form-check-label" id="meal" placeholder="Add Details" ref={register} />
+                                    <label for="meal" class="form-check-label">Meals</label>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">

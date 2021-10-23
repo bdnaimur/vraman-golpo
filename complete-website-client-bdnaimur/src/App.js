@@ -19,6 +19,8 @@ import ShowAllOrders from './Components/ShowAllOrders/ShowAllOrders';
 import Signin from './Components/Signin/Signin';
 import Signup from './Components/Signup/Signup';
 import SingleBookingDetails from './Components/Home/BookingDetails/SingleBookingDetails';
+import ScrollTop from './Components/Home/ScrollTop/ScrollTop';
+import Allservices from './Components/Admin/Allservices/Allservices';
 library.add(fab);
 export const userContext = createContext();
 
@@ -60,6 +62,9 @@ function App() {
             <Route path="/showAllOrders">
               <ShowAllOrders/>
             </Route>
+          <Route path="/allservices">
+            <Allservices/>
+          </Route>
           <Route path="/packages">
             <Packages/>
           </Route>

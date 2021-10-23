@@ -14,7 +14,7 @@ const SingleBookingDetails = () => {
             .then(res => res.json())
             .then(data => setService(data))
 
-    }, [])
+    }, [bookingId])
     console.log(service);
     return (
         <>
@@ -29,9 +29,15 @@ const SingleBookingDetails = () => {
                                     <div class="card-body ">
                                         <h5 class="card-title">Package Name : {service.name}</h5>
                                         <h5>Details</h5>
-                                        <p>
+                                        <p className="text-justified">
                                             {service.details}
                                         </p>
+                                        <div className="d-flex justify-content-between">
+                                        {service.day && <p>Number Days: {service.day}</p>}
+                                        {service.night && <p>Number Nights: {service.night}</p>}
+                                        {service.breakfast && <p>Breakfast Included</p>}
+                                        {service.meal && <p>Meals Included</p>}
+                                        </div>
                                         <div className="d-flex justify-content-between">
                                             <Link to={`/CheckOut/${service._id}`}><button className="btn btn-warning me-5 mr-5">Order</button></Link>
                                             <div className="price ms-5 ml-5 pe-3"><strong>$ </strong>{service.price}</div>

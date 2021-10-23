@@ -12,6 +12,9 @@ const HomeBody = () => {
             <button className='btn btn-warning'><Link to="/bookings">Book A Tour</Link></button>
 
         </div>
+        {/* <button onClick={() => window.scroll({ top: 0, left: 0, behavior: "smooth" })} className={{
+                position: "sticky"
+            }}>click to scroll to the 100th pixel</button> */}
         </div>
     );
 };
