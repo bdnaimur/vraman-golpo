@@ -11,7 +11,7 @@ const Home = () => {
     const [pitha, setPitha] = useState([]);
     
     useEffect(()=>{
-        const url = `https://whispering-lowlands-13005.herokuapp.com/vramankaris`;
+        const url = `https://salty-shore-75037.herokuapp.com/vramankaris`;
         fetch(url)
         .then(res =>res.json())
         .then(data =>setPitha(data))

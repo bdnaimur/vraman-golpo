@@ -1,4 +1,4 @@
-heroku https://whispering-lowlands-13005.herokuapp.com/
+heroku https://salty-shore-75037.herokuapp.com/
 
 WEBSITE NAME: (Vraman Bilash) Travelling Related Webiste
 
@@ -12,5 +12,5 @@ website Link:
 # website link: https://vroman-golpo.web.app/
 # git Server code: https://github.com/Porgramming-Hero-web-course/complete-website-server-bdnaimur
 # git client Code: https://github.com/Porgramming-Hero-web-course/complete-website-client-bdnaimur
-# heroku: //https://whispering-lowlands-13005.herokuapp.com/
+# heroku: //https://salty-shore-75037.herokuapp.com/
 Thank You for visiting the Website.

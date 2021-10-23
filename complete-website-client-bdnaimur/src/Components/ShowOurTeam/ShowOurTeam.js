@@ -6,7 +6,7 @@ const ShowOurTeam = () => {
     const [allTeam, setAllTeam] = useState([] || 1)
     console.log(allTeam);
     useEffect(() => {
-        const url = `https://whispering-lowlands-13005.herokuapp.com/ourTeams`;
+        const url = `https://salty-shore-75037.herokuapp.com/ourTeams`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

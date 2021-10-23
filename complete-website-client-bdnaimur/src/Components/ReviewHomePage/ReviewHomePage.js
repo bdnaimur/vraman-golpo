@@ -10,7 +10,7 @@ const ReviewHomePage = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [reviews, setReview] = useState([] || 1);
     useEffect(() => {
-        const url = `https://whispering-lowlands-13005.herokuapp.com/reviews`;
+        const url = `https://salty-shore-75037.herokuapp.com/reviews`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

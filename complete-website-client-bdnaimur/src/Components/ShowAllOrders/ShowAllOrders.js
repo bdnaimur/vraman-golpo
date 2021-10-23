@@ -10,7 +10,7 @@ const ShowAllOrders = () => {
     const [statusInfo, setStatusInfo] = useState([]);
     // load all data
     useEffect(() => {
-        const url = `https://whispering-lowlands-13005.herokuapp.com/vramankaris`;
+        const url = `https://salty-shore-75037.herokuapp.com/vramankaris`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -21,7 +21,7 @@ const ShowAllOrders = () => {
     const deleteItem = (event, id) => {
         console.log(event.currentTarget);
         console.log(id);
-        fetch(`https://whispering-lowlands-13005.herokuapp.com/deleteItems/${id}`, {
+        fetch(`https://salty-shore-75037.herokuapp.com/deleteItems/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -56,7 +56,7 @@ const ShowAllOrders = () => {
         console.log(editItems);
         const id = editItems._id;
         console.log("clicked", data, id);
-        fetch(`https://whispering-lowlands-13005.herokuapp.com/update/${id}`, {
+        fetch(`https://salty-shore-75037.herokuapp.com/update/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
@@ -80,7 +80,7 @@ const ShowAllOrders = () => {
             status: statusInfo
         };
         console.log(productWithStatus);
-        const uri = `https://whispering-lowlands-13005.herokuapp.com/updateStatus/${id}`;
+        const uri = `https://salty-shore-75037.herokuapp.com/updateStatus/${id}`;
         fetch(uri, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },

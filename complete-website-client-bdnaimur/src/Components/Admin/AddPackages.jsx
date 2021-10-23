@@ -24,7 +24,7 @@ const AddPackages = () => {
             price: data.price
         };
         console.log(eventData);
-        const url = `https://whispering-lowlands-13005.herokuapp.com/addServices`;
+        const url = `https://salty-shore-75037.herokuapp.com/addServices`;
 
         fetch(url, {
             method: 'POST',

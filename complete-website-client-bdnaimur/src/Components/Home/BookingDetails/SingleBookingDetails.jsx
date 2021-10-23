@@ -9,7 +9,7 @@ const SingleBookingDetails = () => {
     const [service, setService] = useState('')
 
     useEffect(() => {
-        const url = `https://whispering-lowlands-13005.herokuapp.com/services/${bookingId}`;
+        const url = `https://salty-shore-75037.herokuapp.com/services/${bookingId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data))
