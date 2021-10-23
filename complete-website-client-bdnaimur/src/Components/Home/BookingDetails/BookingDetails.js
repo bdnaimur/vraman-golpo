@@ -14,9 +14,9 @@ const BookingDetails = ({ service,allServices }) => {
             <div class="card mb-4 tour-height">
                 <img class="card-img-top image-scale" src={service.imageURL} height="250px" alt="Card image cap" />
                 <div class="card-body ">
-                    <h5 class="card-title">Refrash with {service.name}</h5>
+                    <h5 class="card-title">Package Name : {service.name}</h5>
                     <div className="d-flex justify-content-between">
-                    <Link to={`/CheckOut/${service._id}`}><button  className="btn btn-warning me-5 mr-5">Book Now</button></Link>
+                    <Link to={`/singleBookingDetails/${service._id}`}><button  className="btn btn-warning me-5 mr-5">Show Details</button></Link>
                     <div className="price ms-5 ml-5 pe-3"><strong>$ </strong>{service.price}</div>
                     </div>
                 </div>

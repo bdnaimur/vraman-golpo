@@ -18,6 +18,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import ShowAllOrders from './Components/ShowAllOrders/ShowAllOrders';
 import Signin from './Components/Signin/Signin';
 import Signup from './Components/Signup/Signup';
+import SingleBookingDetails from './Components/Home/BookingDetails/SingleBookingDetails';
 library.add(fab);
 export const userContext = createContext();
 
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup/>
+          </Route>
+          <Route path="/singleBookingDetails/:bookingId">
+            <SingleBookingDetails/>
           </Route>
           <PrivateRoute path="/checkOut/:pithaId">
             <CheckOut/>

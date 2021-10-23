@@ -31,6 +31,14 @@ client.connect(err => {
         res.send(items)
       })
   })
+  app.get('/services/:serviceId', (req, res) => {
+    // const id = req.params.serviceId;
+      serviceCollection.find({_id: ObjectId(req.params.serviceId)})
+    .toArray ( (err, documents) =>{
+      console.log(err);
+      res.send(documents[0]);
+    })
+  })
   app.get('/reviews', (req, res) => {
     reviewCollection.find()
       .toArray((err, items) => {
