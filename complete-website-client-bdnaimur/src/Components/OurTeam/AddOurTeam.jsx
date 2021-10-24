@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Admin from '../Admin/Admin';
 
 const AddOurTeam = () => {
     const { register, handleSubmit, watch, errors } = useForm();
@@ -44,26 +45,33 @@ const AddOurTeam = () => {
 
     }
     return (
-        <div>
-            <form className="shadow p-5" onSubmit={handleSubmit(onSubmit)}>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputEmail4">Team Member Name</label>
-                    <input name="name" type="text" class="form-control" id="inputEmail4" placeholder="Add Member Name" ref={register} />
+        <div className="container">
+            <div className="row">
+                <div className="col-md-3">
+                    <Admin />
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="price">Job Description</label>
-                    <input type="text" name="price" class="form-control" id="price" placeholder="Add Job Description" ref={register} />
+                <div className="offset-md-2 col-md-5">
+                    <form className="shadow p-5" onSubmit={handleSubmit(onSubmit)}>
+                        <div class="form-row">
+                            <div class="form-group ">
+                                <label for="inputEmail4">Team Member Name</label>
+                                <input name="name" type="text" class="form-control" id="inputEmail4" placeholder="Add Member Name" ref={register} />
+                            </div>
+                            <div class="form-group ">
+                                <label for="price">Job Description</label>
+                                <input type="text" name="price" class="form-control" id="price" placeholder="Add Job Description" ref={register} />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Add Image </label>
+                            <br />
+                            <input name="exampleRequired" type="file" class="form-control-file" id="exampleFormControlFile1" onChange={handleImageUpload} />
+                        </div>
+                        <br />
+                        <input className="btn btn-info" type="submit" />
+                    </form>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Add Image </label>
-                <br />
-                <input name="exampleRequired" type="file" class="form-control-file" id="exampleFormControlFile1" onChange={handleImageUpload} />
-            </div>
-            <br />
-            <input className="btn btn-info" type="submit" />
-        </form>
         </div>
     );
 };

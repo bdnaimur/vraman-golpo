@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useHistory } from "react-router-dom";
-import ModalForEdit from '../../ModalForEdit/ModalForEdit';
+import React from 'react';
 
 const ShowAllOrdersDetails = ({ orders, deleteItem, onSubmit, editItem, modalIsOpen, closeModal, editItems, handleClick, handleChange }) => {
 
@@ -9,11 +7,11 @@ const ShowAllOrdersDetails = ({ orders, deleteItem, onSubmit, editItem, modalIsO
             <td>{orders.name}</td>
             <td>{orders.email}</td>
             {/* <td>Price: {orders.price}</td> */}
-            <td>Current Status: {orders.status}</td>
+            <td>{orders.status}</td>
             <td>
                 <select onChange={handleChange} id="orders">
                     <option disabled selected >Select</option>
-                    <option value="ongoing">Pending</option>
+                    <option value="pending">Pending</option>
                     <option value="ongoing">Ongoing</option>
                     <option value="done">Done</option>
                 </select>

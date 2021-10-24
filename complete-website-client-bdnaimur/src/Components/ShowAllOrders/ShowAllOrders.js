@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { userContext } from '../../App';
+import React, { useEffect, useState } from 'react';
 import Admin from '../Admin/Admin';
 import Spinner from '../Spinner/Spinner';
 import ShowAllOrdersDetails from './ShowAllOrdersDetails/ShowAllOrdersDetails';
@@ -9,7 +8,7 @@ const ShowAllOrders = () => {
     const [modalIsOpen, setIsOpen] = useState(false);
     const [editItems, setEditItems] = useState([]);
     const [depdency, setdependency] = useState(false);
-    const [statusInfo, setStatusInfo] = useState([]);
+    const [statusInfo, setStatusInfo] = useState('');
     // load all data
     useEffect(() => {
         const url = `https://salty-shore-75037.herokuapp.com/vramankaris`;
@@ -21,9 +20,8 @@ const ShowAllOrders = () => {
     }, [depdency])
     // delete row
     const deleteItem = (event, id) => {
-        console.log(event.currentTarget);
-        console.log(id);
-        fetch(`https://salty-shore-75037.herokuapp.com/${id}`, {
+        console.log(event.target, id);
+        fetch(`http://localhost:5055/allOrders/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -73,11 +71,14 @@ const ShowAllOrders = () => {
     }
     // Change Status code ongoing or done
     const handleChange = e => {
-        const getValue = e.target.value;
-        setStatusInfo(getValue);
+        const status = e.target.value;
+        console.log("status", status);
+        setStatusInfo(status);
         setdependency(false)
+        console.log(e.target);
     }
-    const handleClick = id => {
+    // status update
+    const handleClick = (id) => {
         const productWithStatus = {
             status: statusInfo
         };
@@ -90,10 +91,11 @@ const ShowAllOrders = () => {
         })
             .then(res => {
                 setdependency(true)
-                console.log(res);
+
             })
 
     }
+    console.log("allOrders", allOrders);
     return (
         <div className="container">
             <div className="row">

@@ -87,3 +87,20 @@
   /* font-size: 18px; */
 
 }
+.quantity-top, .quantity-bottom {
+  width: 300px;
+  background: rgb(167, 121, 6);
+}
+
+.quantity-top{
+  box-sizing: border-box;
+  padding: 0 5px 0 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 2px solid rgb(152, 152, 231);
+}
+.quantity-bottom{
+  padding: 0 5px 0 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

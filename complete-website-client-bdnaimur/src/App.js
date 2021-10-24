@@ -7,22 +7,21 @@ import {
 import './App.css';
 import AddPackages from './Components/Admin/AddPackages';
 import Admin from './Components/Admin/Admin';
+import Allservices from './Components/Admin/Allservices/Allservices';
 import CheckOut from './Components/CheckOut/CheckOut';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Header from './Components/Header/Header';
+import SingleBookingDetails from './Components/Home/BookingDetails/SingleBookingDetails';
 import Bookings from './Components/Home/Bookings/Bookings';
 import Home from './Components/Home/Home';
 import Orders from './Components/Orders/Orders';
+import AddOurTeam from './Components/OurTeam/AddOurTeam';
+import OurTeam from './Components/OurTeam/OurTeam';
 import Packages from './Components/Packages/Packages';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import ShowAllOrders from './Components/ShowAllOrders/ShowAllOrders';
 import Signin from './Components/Signin/Signin';
 import Signup from './Components/Signup/Signup';
-import SingleBookingDetails from './Components/Home/BookingDetails/SingleBookingDetails';
-import ScrollTop from './Components/Home/ScrollTop/ScrollTop';
-import Allservices from './Components/Admin/Allservices/Allservices';
-import OurTeam from './Components/OurTeam/OurTeam';
-import ShowOurTeam from './Components/ShowOurTeam/ShowOurTeam';
 library.add(fab);
 export const userContext = createContext();
 
@@ -46,7 +45,7 @@ function App() {
           <Route path="/singleBookingDetails/:bookingId">
             <SingleBookingDetails/>
           </Route>
-          <PrivateRoute path="/checkOut/:pithaId">
+          <PrivateRoute path="/checkOut/:productId">
             <CheckOut/>
           </PrivateRoute>
           <Route path="/admin">
@@ -75,6 +74,9 @@ function App() {
           </Route>
           <Route path="/addPackages">
             <AddPackages/>
+          </Route>
+          <Route path="/addTeamMember">
+            <AddOurTeam/>
           </Route>
           <Route path="/">
             <Home />

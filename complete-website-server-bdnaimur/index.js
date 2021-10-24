@@ -118,6 +118,18 @@ client.connect(err => {
         console.log(documents)
       })
   })
+  app.delete('/allOrders/:id', (req, res) => {
+    const id = ObjectId(req.params.id);
+    console.log('Allorders delete this', id);
+    vramankariCollection.deleteOne({ _id: ObjectId(req.params.id) })
+      .then(documents => {
+        // if(documents.deletedCount>0){
+        //   res.send(documents.deletedCount)
+        // }
+        res.send(documents.deletedCount > 0)
+        console.log(documents)
+      })
+  })
   
   app.delete('/deleteTeamMember/:id', (req, res) => {
     const id = ObjectId(req.params.id);
