@@ -26,7 +26,7 @@ const OurTeam = () => {
     }, [render])
 
     const deleteItem = (id) => {
-        fetch(`http://localhost:5055/deleteTeamMember/${id}`, {
+        fetch(`https://salty-shore-75037.herokuapp.com/deleteTeamMember/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

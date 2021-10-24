@@ -23,7 +23,7 @@ const ShowAllOrders = () => {
     const deleteItem = (event, id) => {
         console.log(event.currentTarget);
         console.log(id);
-        fetch(`http://localhost:5055/deleteItems/${id}`, {
+        fetch(`https://salty-shore-75037.herokuapp.com/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
