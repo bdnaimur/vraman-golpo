@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import AllData from '../../AllData/AllData';
+import Spinner from '../../Spinner/Spinner';
+import Admin from '../Admin';
 
 const Allservices = () => {
     const [services, setServices] = useState([]);
@@ -65,10 +67,26 @@ const Allservices = () => {
     return (
         <div className="container">
             <div className="row">
-                <div className="offset-md-2 col-md-8 p-3">
+                <div className="col-md-3">
+                    <Admin />
+                </div>
+                <div className="col-md-9 p-3">
                     <table class="table table-hover shadow p-5">
+                    <thead>
+                            <tr className="bg-secondary text-white">
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>No. of Days</th>
+                                <th>No. of Nights</th>
+                                <th>Image</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
                         <tbody>
-                            {services.map(service => <AllData editItem={editItem} onSubmit={onSubmit} editItems={editItems} modalIsOpen={modalIsOpen} closeModal={closeModal} deleteItem={deleteItem} service={service}></AllData>)}
+                            {!services.length ? <Spinner /> :
+
+                                services.map(service => <AllData editItem={editItem} onSubmit={onSubmit} editItems={editItems} modalIsOpen={modalIsOpen} closeModal={closeModal} deleteItem={deleteItem} service={service}></AllData>)}
                         </tbody>
                     </table>
                 </div>

@@ -118,9 +118,22 @@ client.connect(err => {
         console.log(documents)
       })
   })
+  
+  app.delete('/deleteTeamMember/:id', (req, res) => {
+    const id = ObjectId(req.params.id);
+    console.log('delete Iteam this', id);
+    adminPanelCollection.deleteOne({ _id: ObjectId(req.params.id) })
+      .then(documents => {
+        // if(documents.deletedCount>0){
+        //   res.send(documents.deletedCount)
+        // }
+        res.send(documents.deletedCount > 0)
+        console.log(documents)
+      })
+  })
   app.delete('/deleteItems/:id', (req, res) => {
     const id = ObjectId(req.params.id);
-    console.log('delete this', id);
+    console.log('delete user oder this', id);
     vramankariCollection.deleteOne({ _id: id })
       .then(documents => {
         // if(documents.deletedCount>0){
@@ -136,15 +149,24 @@ client.connect(err => {
   //     res.send(result.deletedCount > 0);
   //   })
   // })
+  
   app.patch('/update/:id', (req, res) => {
     console.log(ObjectId(req.params.id));
-    // console.log(req.body);
     serviceCollection.updateOne({ _id: ObjectId(req.params.id) },
       {
         $set: { name: req.body.name, price: req.body.price, details: req.body.details, day: req.body.day, night: req.body.night }
       })
       .then(result => {
-        // console.log(result);
+        res.send(result.modifiedCount > 0)
+      })
+  })
+  app.patch('/update/:id', (req, res) => {
+    console.log(ObjectId(req.params.id));
+    vramankariCollection.updateOne({ _id: ObjectId(req.params.id) },
+      {
+        $set: { name: req.body.name, price: req.body.price}
+      })
+      .then(result => {
         res.send(result.modifiedCount > 0)
       })
   })

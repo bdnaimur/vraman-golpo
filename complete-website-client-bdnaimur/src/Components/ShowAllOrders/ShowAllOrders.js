@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { userContext } from '../../App';
+import Admin from '../Admin/Admin';
+import Spinner from '../Spinner/Spinner';
 import ShowAllOrdersDetails from './ShowAllOrdersDetails/ShowAllOrdersDetails';
 
 const ShowAllOrders = () => {
@@ -21,7 +23,7 @@ const ShowAllOrders = () => {
     const deleteItem = (event, id) => {
         console.log(event.currentTarget);
         console.log(id);
-        fetch(`https://salty-shore-75037.herokuapp.com/deleteItems/${id}`, {
+        fetch(`http://localhost:5055/deleteItems/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -93,13 +95,31 @@ const ShowAllOrders = () => {
 
     }
     return (
-        <div>
-            <h1>All Orders : {allOrders.length}</h1>
-            <table class="m-5 table table-hover shadow">
-                <tbody>
-                    {allOrders.map(allOrder => <ShowAllOrdersDetails handleChange={handleChange} handleClick={handleClick} editItem={editItem} onSubmit={onSubmit} deleteItem={deleteItem} orders={allOrder} modalIsOpen={modalIsOpen} closeModal={closeModal} editItems={editItems}></ShowAllOrdersDetails>)}
-                </tbody>
-            </table>
+        <div className="container">
+            <div className="row">
+                <div className="col-md-3">
+                    <Admin />
+                </div>
+                <div className="col-md-9">
+                    <h5>No. Orders : {allOrders.length}</h5>
+                    <table class="m-5 table table-hover shadow">
+                        <thead>
+                            <tr className="bg-secondary text-white">
+                                <th>Package Name</th>
+                                <th>Email</th>
+                                <th>Current Status</th>
+                                <th>Select Status</th>
+                                <th>Change Status</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {!allOrders.length ? <Spinner /> :
+                                allOrders.map(allOrder => <ShowAllOrdersDetails handleChange={handleChange} handleClick={handleClick} editItem={editItem} onSubmit={onSubmit} deleteItem={deleteItem} orders={allOrder} modalIsOpen={modalIsOpen} closeModal={closeModal} editItems={editItems}></ShowAllOrdersDetails>)}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     );
 };

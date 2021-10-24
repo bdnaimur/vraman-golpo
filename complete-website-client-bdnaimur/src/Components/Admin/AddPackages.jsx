@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useRef, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router';
+import Admin from './Admin';
 
 const AddPackages = () => {
     // const [loggedInUser, setLoggedInUser] = useContext(userContext);
@@ -65,7 +66,10 @@ const AddPackages = () => {
     return (
         <div className="container">
             <div className="row">
-                <div className="offset-3 col-md-6">
+                <div className="col-md-3">
+                    <Admin/>
+                </div>
+                <div className="offset-1 col-md-6">
                     <form className="shadow p-5" onSubmit={handleSubmit(onSubmit)}>
                         <div class="form-row">
                             <div class="form-group">

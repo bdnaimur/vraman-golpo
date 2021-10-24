@@ -49,7 +49,7 @@ const Header = () => {
                             {/* {loggedInUser.superAdmin && */}
                                 <li class="nav-item">
                                 {/* <a class="nav-link" href="/orders">Orders</a> */}
-                                <Link class="nav-link" to="/admin">Admin</Link>
+                                <Link class="nav-link" to="/allservices">Admin</Link>
                             </li>
                             {/* }  */}
                             <li class="nav-item">

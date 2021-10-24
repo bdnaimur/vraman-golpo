@@ -9,15 +9,15 @@ const AllData = ({ service, deleteItem, onSubmit, editItem, modalIsOpen, closeMo
 
     return (
         <tr>
-            <td>Name: {service.name}</td>
-            {/* <td>{service.email}</td> */}
-            <td>Price: {service.price}</td>
-            {/* <td>Details: {service.details}</td> */}
-            {service.day && <td>Day: {service.day}</td>}
-            {service.night && <td>Night: {service.night}</td>}
+            <td>{service.name}</td>
+            <td>{service.price}</td>
+            {service.day && <td>{service.day}</td>}
+            {service.night && <td>{service.night}</td>}
             <td><img style={{ width: "50px", height: "50px" }} src={service.imageURL} alt="" /></td>
-            <td><button onClick={() => editItem(service._id)} className="btn btn-warning">Edit</button></td>
-        <ModalForEdit editItem={editItems} onSubmit={onSubmit} modalIsOpen={modalIsOpen} closeModal={closeModal}></ModalForEdit>
+            <td>
+                <button onClick={() => editItem(service._id)} className="btn btn-warning">Edit</button>
+                <ModalForEdit editItem={editItems} onSubmit={onSubmit} modalIsOpen={modalIsOpen} closeModal={closeModal}></ModalForEdit>
+            </td>
             <td><button onClick={() => deleteItem(service._id)} className="btn btn-danger">Delete</button></td>
         </tr>
     );

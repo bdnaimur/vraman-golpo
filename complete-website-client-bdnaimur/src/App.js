@@ -21,6 +21,8 @@ import Signup from './Components/Signup/Signup';
 import SingleBookingDetails from './Components/Home/BookingDetails/SingleBookingDetails';
 import ScrollTop from './Components/Home/ScrollTop/ScrollTop';
 import Allservices from './Components/Admin/Allservices/Allservices';
+import OurTeam from './Components/OurTeam/OurTeam';
+import ShowOurTeam from './Components/ShowOurTeam/ShowOurTeam';
 library.add(fab);
 export const userContext = createContext();
 
@@ -64,6 +66,9 @@ function App() {
             </Route>
           <Route path="/allservices">
             <Allservices/>
+          </Route>
+          <Route path="/ourTeam">
+            <OurTeam/>
           </Route>
           <Route path="/packages">
             <Packages/>
