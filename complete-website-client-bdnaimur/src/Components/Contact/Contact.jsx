@@ -1,30 +1,37 @@
-import emailjs from 'emailjs';
+import emailjs from 'emailjs-com';
 import React from 'react';
-
+import toast from 'react-hot-toast';
+import Fade from 'react-reveal/Fade';
+import swal from 'sweetalert';
 const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
+        const loading = toast.loading('Please wait...!');
         emailjs.sendForm('service_7ykjwk9',
             'contact_form',
             e.target,
             'user_9atVolFDF0CeY22Zu9QcB')
-            .then((result) => {
-                if (result.text === "OK") {
-                    alert("Succefully Message Sent")
+            .then(res => {
+                toast.dismiss(loading);
+                if (res.text === "OK") {
+                    swal("Thank you!", "Your message was sent successfully.", "success");
+                }else{
+                    swal("Sorry!", "Something went wrong. Please try again later", "error");
                 }
-                console.log(result);
-            }, (error) => {
-                console.log(error.text);
+            }, (err) => {
+                toast.dismiss(loading);
+                swal("Sorry!", "Something went wrong. Please try again later", "error")
             });
         e.target.reset();
     }
 
     return (
-        <div className="container m-5">
+        <div className="container fluid m-5 bg-dark p-3">
             <div className="row">
-                <h3 className="text-secondary text-center">Contact Us</h3>
+            <Fade top duration={2500} distance="40px">
+                <h3 className="text-white text-center">Contact Us</h3>
                 <div className="offset-md-3 col-md-6">
-                    <form onSubmit={handleSubmit} className="contact-form">
+                    <form onSubmit={handleSubmit} className="">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Name" />
@@ -42,6 +49,7 @@ const Contact = () => {
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
+                </Fade>
             </div>
         </div>
     );
