@@ -1,6 +1,6 @@
 import emailjs from 'emailjs';
 import React from 'react';
-
+import contactImage from '../../assets/logo/contactImage.jpg'
 const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,7 +23,7 @@ const Contact = () => {
         <div className="container m-5">
             <div className="row">
                 <h3 className="text-secondary text-center">Contact Us</h3>
-                <div className="offset-md-3 col-md-6">
+                <div className="col-md-6">
                     <form onSubmit={handleSubmit} className="contact-form">
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -41,6 +41,9 @@ const Contact = () => {
                         <br />
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+                </div>
+                <div className="col-md-6">
+                    <img src={contactImage} height="400px" width="600px" alt="" srcset="" />
                 </div>
             </div>
         </div>
