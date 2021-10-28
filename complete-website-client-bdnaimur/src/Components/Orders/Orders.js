@@ -21,29 +21,31 @@ const Orders = () => {
             .then(data => {
                 console.log(data);
                 if (data) {
-                    const remainItem = orders.filter( item => item._id !== id);
+                    const remainItem = orders.filter(item => item._id !== id);
                     setOrders(remainItem);
                 }
             })
     }
     return (
-        <div>
-            <h4>Welcome {loggedInUser.displayName}, Your Orders: </h4>
-            <table class="table table-hover shadow m-5">
-                <thead>
-                    <tr>
-                        <th scope="col">Package Name</th>
-                        <th scope="col">Total Price</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">No. of Travller</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Image</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {orders.map(pth => <AllOrders deleteItem={deleteItem}  order={pth}></AllOrders>)}
-                </tbody>
-            </table>          
+        <div className="container">
+            <div className="row">
+                <h4>Welcome {loggedInUser.displayName}, Your Orders: </h4>
+                <table class="table table-hover shadow m-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">Package Name</th>
+                            <th scope="col">Total Price</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">No. of Travller</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {orders.map(pth => <AllOrders deleteItem={deleteItem} order={pth}></AllOrders>)}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

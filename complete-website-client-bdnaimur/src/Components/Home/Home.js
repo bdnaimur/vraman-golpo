@@ -7,7 +7,6 @@ import WhoWeAre from '../WhoWEAre/WhoWeAre';
 import Bookings from './Bookings/Bookings';
 import './Home.css';
 import HomeBody from './HomeBody/HomeBody';
-import ScrollTop from './ScrollTop/ScrollTop';
 const Home = () => {
     const [pitha, setPitha] = useState([]);
     
@@ -18,15 +17,15 @@ const Home = () => {
         .then(data =>setPitha(data))
     },[])
     return (
-        <div >
-            <HomeBody ></HomeBody>
+        < >
+            <HomeBody />
             <Bookings/>
             <ReviewHomePage/>
             <ShowOurTeam/>
             <WhoWeAre/>
             <Contact/>
             <Footer/>
-        </div>
+        </>
     );
 };
 

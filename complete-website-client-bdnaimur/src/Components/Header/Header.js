@@ -4,16 +4,15 @@ import { userContext } from '../../App';
 import logo from '../../assets/logo/varaman galpo logo.png';
 import './Header.css';
 import Topbar from './Topbar';
+import { Fade } from 'react-reveal/Fade';
+
 const Header = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [isAdmin, setIsAdmin] = useState({
     })
     const handleClick = () => {
-        // const getData = {...loggedInUser};
-        // getData.emailVerified = false;
         setLoggedInUser('');
     }
-
     // const cpName = {
     //     fontWeight : "700",
     //     color: "darkGreen",
@@ -36,6 +35,7 @@ const Header = () => {
                         aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+
                     <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
                         <ul class="navbar-nav fw-bold">
                             <li class="nav-item">
