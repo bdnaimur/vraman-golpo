@@ -29,6 +29,9 @@ const AddPackages = () => {
             meal: data.meal,
         };
         console.log(eventData);
+        const blogerId = sessionStorage.getItem("blogerId");
+        localStorage.setItem(blogerId, JSON.stringify(eventData))
+
         const url = `https://salty-shore-75037.herokuapp.com/addServices`;
 
         fetch(url, {

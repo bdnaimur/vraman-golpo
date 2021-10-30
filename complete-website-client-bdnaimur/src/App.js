@@ -11,6 +11,7 @@ import Allservices from './Components/Admin/Allservices/Allservices';
 import CheckOut from './Components/CheckOut/CheckOut';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Header from './Components/Header/Header';
+import Blogs from './Components/Home/Blogs/Blogs';
 import SingleBookingDetails from './Components/Home/BookingDetails/SingleBookingDetails';
 import Bookings from './Components/Home/Bookings/Bookings';
 import Home from './Components/Home/Home';
@@ -22,6 +23,8 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import ShowAllOrders from './Components/ShowAllOrders/ShowAllOrders';
 import Signin from './Components/Signin/Signin';
 import Signup from './Components/Signup/Signup';
+import AddBlogs from './Components/Home/Blogs/AddBlogs';
+import AllBlogs from './Components/Home/Blogs/AllBlogs';
 library.add(fab);
 export const userContext = createContext();
 
@@ -57,8 +60,8 @@ function App() {
           <PrivateRoute path="/bookings">
               <Bookings/>
             </PrivateRoute>
-            <PrivateRoute path="/orders">
-              <Orders/>
+            <PrivateRoute path="/blogs">
+              <Blogs/>
             </PrivateRoute>
             <Route path="/showAllOrders">
               <ShowAllOrders/>
@@ -78,6 +81,12 @@ function App() {
           <Route path="/addTeamMember">
             <AddOurTeam/>
           </Route>
+          <PrivateRoute path="/addBlogs">
+            <AddBlogs/>
+          </PrivateRoute>
+          <PrivateRoute path="/allBlogs">
+            <AllBlogs/>
+          </PrivateRoute>
           <Route path="/">
             <Home />
           </Route>

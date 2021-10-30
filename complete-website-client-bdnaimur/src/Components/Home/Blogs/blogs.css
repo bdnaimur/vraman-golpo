@@ -1,0 +1,23 @@
+.add-blogs, .all-blogs{
+    display: block;
+    padding: 0px 20px;
+    margin: 20px auto;
+    text-align: center;
+    color: wheat;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    background-color: goldenrod;
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    align-items: center;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}

@@ -5,13 +5,20 @@ import logo from '../../assets/logo/varaman galpo logo.png';
 import './Header.css';
 import Topbar from './Topbar';
 import { Fade } from 'react-reveal/Fade';
+import { useDispatch, useSelector } from 'react-redux';
+import { customAuthAction } from '../../redux/action/action';
 
 const Header = () => {
+    const email = useSelector(state=>state.auth?.authdetails?.email || '');
+    const dispatch = useDispatch();
+
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [isAdmin, setIsAdmin] = useState({
     })
     const handleClick = () => {
         setLoggedInUser('');
+        dispatch(customAuthAction({}));
+
     }
     // const cpName = {
     //     fontWeight : "700",
@@ -44,7 +51,7 @@ const Header = () => {
                             </li>
                             <li class="nav-item">
                                 {/* <a class="nav-link" href="/orders">Orders</a> */}
-                                <Link class="nav-link" to="/orders">Orders</Link>
+                                <Link class="nav-link" to="/blogs">Blogs</Link>
                             </li>
                             {/* {loggedInUser.superAdmin && */}
                                 <li class="nav-item">
@@ -56,7 +63,7 @@ const Header = () => {
                                 {/* <a class="nav-link" href="/deals">Deals</a> */}
                                 <Link class="nav-link " to="/packages">Packages</Link>
                             </li>
-                            {loggedInUser.emailVerified && <li class="nav-item nav-link " onClick={handleClick} >Sign Out</li>}
+                            {email && <li class="nav-item nav-link " onClick={handleClick} >Sign Out</li>}
                             
                             {loggedInUser.emailVerified && <li className="nav-item"><Link className="nav-link " to={`/userDashboard/${loggedInUser.email}`}>Dashboard</Link></li>}
                         </ul>
